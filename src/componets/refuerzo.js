@@ -15,10 +15,10 @@ salario > 0
   : console.log("no tiene saldo en la cuenta");
 
 //recorriendo arreglos
-let ciudades = [1, 3, 5];
+let numero = [1, 3, 5];
 //devuelve los valores
-ciudades.forEach((valor, index) => {
-  console.log(index, valor);
+numero.forEach((numero) => {
+  console.log(numero * 4);
 });
 
 //recorriendo matriz
@@ -30,6 +30,9 @@ let matriz = [
 
 //operador map:devuelve otro arreglo con la posiciones originaless
 //usar este bucle en react me permite obtener index
-ciudades.map((valor, index) => {
-  return console.log(index, valor);
+let nuevoArreglo = numero.map((numero) => {
+  return numero * 4;
 });
+
+console.log(numero);
+console.log(nuevoArreglo);
