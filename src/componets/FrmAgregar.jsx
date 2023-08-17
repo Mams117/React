@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const FrmAgregar = () => {
-  const [datos, setDatos] = useState({}); //objeto y metodo de inicializacion para tomar los datos del contacto (formulario)
-
+const FrmAgregar = ({ datos, setDatos }) => {
   //metodo q almacena las pelis en el localStorage
   const guardarLocalStorage = (dataFrm) => {
     //leemos la informacion del localStorage
@@ -13,6 +11,8 @@ const FrmAgregar = () => {
     } else {
       elementos = [dataFrm]; //crea el arreglo local por primera vez
     }
+    //ACTUALIZAMOS LA RENDERIZACION
+    setDatos(elementos);
     localStorage.setItem("pelicula", JSON.stringify(elementos));
   };
 
@@ -28,7 +28,7 @@ const FrmAgregar = () => {
     };
 
     setDatos(dataFrm);
-    console.log(datos);
+    //console.log(datos);
     guardarLocalStorage(dataFrm);
   };
 
